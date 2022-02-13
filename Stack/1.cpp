@@ -43,6 +43,7 @@ void printStack() {
 }
 
 int peek() {
+    if(isEmpty()) return 0;
     return arr[top];
 }
 
@@ -61,12 +62,16 @@ int main() {
     cout << "\nAfter Insertion" << endl;
     printStack();
 
-    // pop();
-    // cout << "\nAfter Deletion" << endl;
-    // printStack();
+    pop();
+    cout << "\nAfter Deletion" << endl;
+    printStack();
 
-    cout << "\nPeek: ";
-    cout << peek();
+    int peekOfStack = peek();
+    if(peekOfStack == 0) {
+        cout << "Stack is Empty" << endl;
+    } else {
+        cout << "Peek: " << peekOfStack << endl;
+    }
 
     return 0;
 }
